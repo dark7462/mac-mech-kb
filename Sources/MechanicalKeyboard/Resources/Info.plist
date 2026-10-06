@@ -3,8 +3,9 @@
 <plist version="1.0"><dict>
   <key>CFBundleName</key><string>Mechanical Keyboard</string>
   <key>CFBundleDisplayName</key><string>Mechanical Keyboard</string>
-  <key>CFBundleIdentifier</key><string>com.example.MechanicalKeyboard</string>
+  <key>CFBundleIdentifier</key><string>io.github.dark7462.mac-mech-kb</string>
   <key>CFBundleExecutable</key><string>MechanicalKeyboard</string>
+  <key>CFBundleIconFile</key><string>AppIcon</string>
   <key>CFBundlePackageType</key><string>APPL</string>
   <key>CFBundleShortVersionString</key><string>0.1.0</string>
   <key>CFBundleVersion</key><string>1</string>

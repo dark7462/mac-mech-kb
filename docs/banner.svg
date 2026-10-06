@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="460" viewBox="0 0 1280 460" role="img" aria-labelledby="title desc">
+<title id="title">mac-mech-kb — Give your keyboard a little character</title>
+<desc id="desc">A warm, dark keyboard illustration with blue, brown and red keycaps. Mechanical keyboard sounds for your Mac.</desc>
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#171d29"/><stop offset="1" stop-color="#0e121a"/></linearGradient>
+ <linearGradient id="case" x2="0" y2="1"><stop stop-color="#343d4b"/><stop offset="1" stop-color="#1d2531"/></linearGradient>
+ <linearGradient id="key" x2="0" y2="1"><stop stop-color="#f6f0e7"/><stop offset="1" stop-color="#dcd5cb"/></linearGradient>
+</defs>
+<rect width="1280" height="460" rx="24" fill="url(#bg)"/>
+<circle cx="1150" cy="-40" r="320" fill="#dea570" opacity=".045"/>
+<circle cx="1060" cy="420" r="230" fill="#9abefa" opacity=".035"/>
+<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">
+ <rect x="60" y="58" width="8" height="8" rx="4" fill="#f0b579"/>
+ <text x="83" y="69" fill="#aeb7c7" font-family="SFMono-Regular,Consolas,monospace" font-size="16" letter-spacing="3">MAC-MECH-KB</text>
+ <text x="58" y="159" fill="#f5f0e9" font-size="53" font-weight="700" letter-spacing="-2">Give your keyboard</text>
+ <text x="58" y="221" fill="#efb67e" font-size="53" font-weight="700" letter-spacing="-2">a little character.</text>
+ <text x="61" y="279" fill="#abb5c6" font-size="20">Mechanical sounds. A satisfying thock.</text>
+ <text x="61" y="310" fill="#abb5c6" font-size="20">Right in your Mac’s menu bar.</text>
+ <g font-size="13" font-family="SFMono-Regular,Consolas,monospace" fill="#c9d1dc">
+  <rect x="60" y="363" width="128" height="35" rx="17.5" fill="#232c3a"/><text x="78" y="386">NATIVE macOS</text>
+  <rect x="200" y="363" width="114" height="35" rx="17.5" fill="#232c3a"/><text x="220" y="386">3 PRESETS</text>
+  <rect x="326" y="363" width="134" height="35" rx="17.5" fill="#232c3a"/><text x="345" y="386">100% OFFLINE</text>
+ </g>
+</g>
+<g transform="translate(665 90) rotate(-7 255 135)">
+ <rect x="-4" y="23" width="553" height="298" rx="32" fill="#060a11" opacity=".65"/>
+ <rect width="550" height="298" rx="32" fill="#101722" stroke="#414b5c" stroke-width="2"/>
+ <rect x="8" y="-8" width="534" height="287" rx="28" fill="url(#case)" stroke="#4a5361"/>
+
+<rect x="27" y="19" width="62" height="55" rx="9" fill="#8b8580"/><rect x="27" y="13" width="62" height="55" rx="9" fill="url(#key)"/><text x="37" y="33" fill="#414650" font-family="Arial,sans-serif" font-size="10">esc</text>
+<rect x="99" y="19" width="62" height="55" rx="9" fill="#8b8580"/><rect x="99" y="13" width="62" height="55" rx="9" fill="#8ebbed"/><text x="109" y="33" fill="#414650" font-family="Arial,sans-serif" font-size="13">Q</text>
+<rect x="171" y="19" width="62" height="55" rx="9" fill="#8b8580"/><rect x="171" y="13" width="62" height="55" rx="9" fill="#c99b73"/><text x="181" y="33" fill="#414650" font-family="Arial,sans-serif" font-size="13">W</text>
+<rect x="243" y="19" width="62" height="55" rx="9" fill="#8b8580"/><rect x="243" y="13" width="62" height="55" rx="9" fill="#e8908d"/><text x="253" y="33" fill="#414650" font-family="Arial,sans-serif" font-size="13">E</text>
+<rect x="315" y="19" width="62" height="55" rx="9" fill="#8b8580"/><rect x="315" y="13" width="62" height="55" rx="9" fill="url(#key)"/><text x="325" y="33" fill="#414650" font-family="Arial,sans-serif" font-size="13">R</text>
+<rect x="387" y="19" width="62" height="55" rx="9" fill="#8b8580"/><rect x="387" y="13" width="62" height="55" rx="9" fill="url(#key)"/><text x="397" y="33" fill="#414650" font-family="Arial,sans-serif" font-size="13">T</text>
+<rect x="459" y="19" width="62" height="55" rx="9" fill="#8b8580"/><rect x="459" y="13" width="62" height="55" rx="9" fill="url(#key)"/><text x="469" y="33" fill="#414650" font-family="Arial,sans-serif" font-size="13">Y</text>
+<rect x="27" y="85" width="62" height="55" rx="9" fill="#8b8580"/><rect x="27" y="79" width="62" height="55" rx="9" fill="url(#key)"/><text x="37" y="99" fill="#414650" font-family="Arial,sans-serif" font-size="10">tab</text>
+<rect x="99" y="85" width="62" height="55" rx="9" fill="#8b8580"/><rect x="99" y="79" width="62" height="55" rx="9" fill="url(#key)"/><text x="109" y="99" fill="#414650" font-family="Arial,sans-serif" font-size="13">A</text>
+<rect x="171" y="85" width="62" height="55" rx="9" fill="#8b8580"/><rect x="171" y="79" width="62" height="55" rx="9" fill="url(#key)"/><text x="181" y="99" fill="#414650" font-family="Arial,sans-serif" font-size="13">S</text>
+<rect x="243" y="85" width="62" height="55" rx="9" fill="#8b8580"/><rect x="243" y="79" width="62" height="55" rx="9" fill="url(#key)"/><text x="253" y="99" fill="#414650" font-family="Arial,sans-serif" font-size="13">D</text>
+<rect x="315" y="85" width="62" height="55" rx="9" fill="#8b8580"/><rect x="315" y="79" width="62" height="55" rx="9" fill="url(#key)"/><text x="325" y="99" fill="#414650" font-family="Arial,sans-serif" font-size="13">F</text>
+<rect x="387" y="85" width="62" height="55" rx="9" fill="#8b8580"/><rect x="387" y="79" width="62" height="55" rx="9" fill="url(#key)"/><text x="397" y="99" fill="#414650" font-family="Arial,sans-serif" font-size="13">G</text>
+<rect x="459" y="85" width="62" height="55" rx="9" fill="#8b8580"/><rect x="459" y="79" width="62" height="55" rx="9" fill="url(#key)"/><text x="469" y="99" fill="#414650" font-family="Arial,sans-serif" font-size="13">H</text>
+<rect x="27" y="151" width="62" height="55" rx="9" fill="#8b8580"/><rect x="27" y="145" width="62" height="55" rx="9" fill="url(#key)"/><text x="37" y="165" fill="#414650" font-family="Arial,sans-serif" font-size="10">shift</text>
+<rect x="99" y="151" width="62" height="55" rx="9" fill="#8b8580"/><rect x="99" y="145" width="62" height="55" rx="9" fill="url(#key)"/><text x="109" y="165" fill="#414650" font-family="Arial,sans-serif" font-size="13">Z</text>
+<rect x="171" y="151" width="62" height="55" rx="9" fill="#8b8580"/><rect x="171" y="145" width="62" height="55" rx="9" fill="url(#key)"/><text x="181" y="165" fill="#414650" font-family="Arial,sans-serif" font-size="13">X</text>
+<rect x="243" y="151" width="62" height="55" rx="9" fill="#8b8580"/><rect x="243" y="145" width="62" height="55" rx="9" fill="url(#key)"/><text x="253" y="165" fill="#414650" font-family="Arial,sans-serif" font-size="13">C</text>
+<rect x="315" y="151" width="62" height="55" rx="9" fill="#8b8580"/><rect x="315" y="145" width="62" height="55" rx="9" fill="url(#key)"/><text x="325" y="165" fill="#414650" font-family="Arial,sans-serif" font-size="13">V</text>
+<rect x="387" y="151" width="62" height="55" rx="9" fill="#8b8580"/><rect x="387" y="145" width="62" height="55" rx="9" fill="url(#key)"/><text x="397" y="165" fill="#414650" font-family="Arial,sans-serif" font-size="13">B</text>
+<rect x="459" y="151" width="62" height="55" rx="9" fill="#8b8580"/><rect x="459" y="145" width="62" height="55" rx="9" fill="url(#key)"/><text x="469" y="165" fill="#414650" font-family="Arial,sans-serif" font-size="13">N</text>
+<rect x="27" y="217" width="62" height="45" rx="9" fill="#8b8580"/><rect x="27" y="211" width="62" height="45" rx="9" fill="#dcd5cb"/>
+<rect x="99" y="217" width="278" height="45" rx="9" fill="#8b8580"/><rect x="99" y="211" width="278" height="45" rx="9" fill="url(#key)"/>
+<rect x="204" y="241" width="68" height="3" rx="1.5" fill="#b7b0a7"/>
+<rect x="387" y="217" width="62" height="45" rx="9" fill="#8b8580"/><rect x="387" y="211" width="62" height="45" rx="9" fill="#dcd5cb"/>
+<rect x="459" y="217" width="62" height="45" rx="9" fill="#8b8580"/><rect x="459" y="211" width="62" height="45" rx="9" fill="#dcd5cb"/>
+</g>
+</svg>

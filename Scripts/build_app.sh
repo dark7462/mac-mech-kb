@@ -1,11 +1,16 @@
 #!/bin/zsh
 set -euo pipefail
 cd "${0:A:h}/.."
+if (( $# != 0 )); then
+    print -u2 -- "Usage: zsh Scripts/build_app.sh"
+    exit 2
+fi
 # Recorded WAV assets are checked in. Never regenerate audio during an app build.
 python3 Scripts/verify_sounds.py
 mkdir -p .build/cache dist
 export CLANG_MODULE_CACHE_PATH="$PWD/.build/cache"
-build_options=(--disable-sandbox --manifest-cache none -debug-info-format none -c release)
+build_options=(--disable-sandbox --manifest-cache none -debug-info-format none -c release
+    --triple arm64-apple-macosx13.0 --scratch-path .build/release-arm64)
 swift build "${build_options[@]}"
 binary_directory=$(swift build "${build_options[@]}" --show-bin-path)
 app_path="$PWD/dist/MechanicalKeyboard.app"
@@ -14,11 +19,16 @@ trap 'rm -rf "$staging_directory"' EXIT
 staged_app="$staging_directory/MechanicalKeyboard.app"
 mkdir -p "$staged_app/Contents/MacOS" "$staged_app/Contents/Resources"
 cp "$binary_directory/MechanicalKeyboard" "$staged_app/Contents/MacOS/MechanicalKeyboard"
+[[ "$(lipo -archs "$staged_app/Contents/MacOS/MechanicalKeyboard")" == arm64 ]]
 cp -R "$binary_directory/MechanicalKeyboard_MechanicalKeyboard.bundle" "$staged_app/Contents/Resources/"
 cp Sources/MechanicalKeyboard/Resources/Info.plist "$staged_app/Contents/Info.plist"
 cp AudioLicenses.md LICENSE "$staged_app/Contents/Resources/"
+cp Assets/AppIcon.icns "$staged_app/Contents/Resources/"
 plutil -lint "$staged_app/Contents/Info.plist"
 python3 Scripts/verify_sounds.py --bundle "$staged_app"
+# Seal the entire bundle after copying resources. Ad-hoc signing is not notarization.
+codesign --force --sign - "$staged_app"
+codesign --verify --deep --strict --all-architectures --verbose=2 "$staged_app"
 # Replace the generated bundle only after it passes verification. Avoid merging stale files.
 if [[ -e "$app_path" ]]; then mv "$app_path" "$staging_directory/previous.app"; fi
 if ! mv "$staged_app" "$app_path"; then
