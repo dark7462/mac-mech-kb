@@ -39,9 +39,9 @@ class AudioVerificationTests(unittest.TestCase):
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name)
         shutil.copytree(ROOT / "AudioSources", self.root / "AudioSources", ignore=shutil.ignore_patterns("*.html"))
-        shutil.copytree(ROOT / "Sources/MechanicalKeyboard/Resources/Sounds",
-                        self.root / "Sources/MechanicalKeyboard/Resources/Sounds")
-        self.sample = self.root / "Sources/MechanicalKeyboard/Resources/Sounds/Blue/normal-01.wav"
+        shutil.copytree(ROOT / "Sources/MacMechKB/Resources/Sounds",
+                        self.root / "Sources/MacMechKB/Resources/Sounds")
+        self.sample = self.root / "Sources/MacMechKB/Resources/Sounds/Blue/normal-01.wav"
         self.report = self.root / "AudioSources/processing-report.json"
 
     def test_changed_audio_is_rejected(self):
@@ -76,7 +76,7 @@ class AudioVerificationTests(unittest.TestCase):
         app = self.root / "Stale.app"
         resources = app / "Contents/Resources"
         resources.mkdir(parents=True)
-        shutil.copytree(self.root / "Sources/MechanicalKeyboard/Resources/Sounds", resources / "Sounds")
+        shutil.copytree(self.root / "Sources/MacMechKB/Resources/Sounds", resources / "Sounds")
         shutil.copyfile(self.sample, resources / "unexpected.wav")
         with self.assertRaisesRegex(ValueError, "exactly 27 WAVs"):
             verify(self.root, bundle=app)

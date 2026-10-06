@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "AudioSources"
-OUTPUT = ROOT / "Sources/MechanicalKeyboard/Resources/Sounds"
+OUTPUT = ROOT / "Sources/MacMechKB/Resources/Sounds"
 CACHE = ROOT / ".build/audio"
 RATE = 48000
 

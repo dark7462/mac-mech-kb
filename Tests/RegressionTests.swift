@@ -255,7 +255,7 @@ struct RegressionTests {
 
     static func soundPacks() throws {
         let resources = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-            .appendingPathComponent("Sources/MechanicalKeyboard/Resources")
+            .appendingPathComponent("Sources/MacMechKB/Resources")
         for preset in SoundPreset.allCases {
             let pack = try SoundPack.load(preset, from: resources)
             try check(pack[.normal]?.count == 6, "All six variations load")
@@ -300,7 +300,7 @@ struct RegressionTests {
     static func audioRendering() throws {
         let engine = AVAudioEngine()
         let resources = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-            .appendingPathComponent("Sources/MechanicalKeyboard/Resources")
+            .appendingPathComponent("Sources/MacMechKB/Resources")
         let sound = SoundEngine(engine: engine, resources: resources, variationSelector: { _, _ in 1 })
         try engine.enableManualRenderingMode(.offline, format: SoundPack.format, maximumFrameCount: 1024)
         let rendered = AVAudioPCMBuffer(pcmFormat: SoundPack.format, frameCapacity: 1024)!
@@ -448,7 +448,7 @@ struct RegressionTests {
     static func lubeLoudness() throws {
         let engine = AVAudioEngine()
         let resources = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-            .appendingPathComponent("Sources/MechanicalKeyboard/Resources")
+            .appendingPathComponent("Sources/MacMechKB/Resources")
         let sound = SoundEngine(engine: engine, resources: resources, variationSelector: { _, _ in 1 })
         try engine.enableManualRenderingMode(.offline, format: SoundPack.format, maximumFrameCount: 960)
         let buffer = AVAudioPCMBuffer(pcmFormat: SoundPack.format, frameCapacity: 960)!
@@ -499,7 +499,7 @@ struct RegressionTests {
         let destination = root.appendingPathComponent("dist/AudioPreviews")
         try FileManager.default.createDirectory(at: destination, withIntermediateDirectories: true)
         let engine = AVAudioEngine()
-        let sound = SoundEngine(engine: engine, resources: root.appendingPathComponent("Sources/MechanicalKeyboard/Resources"))
+        let sound = SoundEngine(engine: engine, resources: root.appendingPathComponent("Sources/MacMechKB/Resources"))
         try engine.enableManualRenderingMode(.offline, format: SoundPack.format, maximumFrameCount: 128)
         let buffer = AVAudioPCMBuffer(pcmFormat: SoundPack.format, frameCapacity: 128)!
         var events: [(frame: Int, key: Int64)] = []

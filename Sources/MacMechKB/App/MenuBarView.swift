@@ -121,7 +121,7 @@ struct MenuBarView: View {
                 .frame(width: 42, height: 42)
                 .background(.quaternary, in: RoundedRectangle(cornerRadius: 11))
             VStack(alignment: .leading, spacing: 2) {
-                Text("Mechanical Keyboard").font(.headline)
+                Text("mac-mech-kb").font(.headline)
                 Text(controller.status.title)
                     .font(.caption)
                     .foregroundStyle(controller.status == .playing ? .green : .secondary)

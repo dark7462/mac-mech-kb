@@ -2,13 +2,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "MechanicalKeyboard",
+    name: "MacMechKB",
     platforms: [.macOS(.v13)],
-    products: [.executable(name: "MechanicalKeyboard", targets: ["MechanicalKeyboard"])],
+    products: [.executable(name: "mac-mech-kb", targets: ["MacMechKB"])],
     targets: [
         .executableTarget(
-            name: "MechanicalKeyboard",
-            path: "Sources/MechanicalKeyboard",
+            name: "MacMechKB",
+            path: "Sources/MacMechKB",
             exclude: ["Resources/Info.plist"],
             resources: [.copy("Resources/Sounds")]
         )

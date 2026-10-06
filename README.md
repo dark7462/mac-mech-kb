@@ -31,18 +31,18 @@
 macOS **13 Ventura or later** · **Apple Silicon only (M1 and newer)** · No Swift or Xcode needed to install.
 
 1. Open the downloaded `.dmg`.
-2. Drag **MechanicalKeyboard.app** into **Applications**, then eject the disk image.
+2. Drag **mac-mech-kb.app** into **Applications**, then eject the disk image.
 3. Open the app from Applications. Look for the **keyboard icon in your menu bar**.
 4. Choose **Request access** and allow the app in **System Settings → Privacy & Security → Input Monitoring**. Quit and reopen it if macOS asks.
 5. Pick a switch, set your volume, and type.
 
 > [!IMPORTANT]
-> **v0.1.0 is not Developer ID signed or notarized by Apple.** If macOS blocks it, first try opening the app, then use **System Settings → Privacy & Security → Open Anyway** for this app if you trust this release. See [Apple's first-launch instructions](https://support.apple.com/102445). You do not need to disable Gatekeeper. Release assets include a SHA-256 checksum.
+> **This release is not Developer ID signed or notarized by Apple.** If macOS blocks it, first try opening the app, then use **System Settings → Privacy & Security → Open Anyway** for this app if you trust this release. See [Apple's first-launch instructions](https://support.apple.com/102445). You do not need to disable Gatekeeper. Release assets include a SHA-256 checksum.
 
 <details>
-<summary><strong>Already running a development build?</strong></summary>
+<summary><strong>Already running an earlier build?</strong></summary>
 
-Quit the old copy before opening the installed app. This first public release uses the permanent bundle identifier `io.github.dark7462.mac-mech-kb`, so you may need to grant Input Monitoring again and reselect your preferences. Keep one copy running at a time.
+Quit the old copy before installing, and remove it afterward if it has a different app name. Keep one copy running at a time. Public releases use the permanent bundle identifier `io.github.dark7462.mac-mech-kb`; builds from before v0.1.0 may need Input Monitoring access and preferences set again.
 
 </details>
 
@@ -76,7 +76,7 @@ The app uses the hardware key code and repeat flag to choose a sound. It doesn't
 - **Held keys don't chatter.** Autorepeat, modifiers, F1–F20, and navigation keys are silent. Letters, numbers, punctuation, Tab, Escape, keypad, and international typing keys sound.
 - **Secure Input can suppress sounds.** Some password fields and apps prevent global keyboard events from reaching the listener.
 - **Audio overlaps freely up to 32 voices.** At capacity, the oldest voice is replaced so new strokes don't wait.
-- **First public release.** Tested on the developer's Apple Silicon Mac. Feedback from other M1 and newer Macs is welcome.
+- **Early release.** Tested on the developer's Apple Silicon Mac. Feedback from other M1 and newer Macs is welcome.
 
 ## Build it yourself
 
@@ -86,7 +86,7 @@ You'll need an **Apple Silicon Mac (M1 or newer)**, macOS 13+, **Swift 5.9+ comm
 git clone https://github.com/dark7462/mac-mech-kb.git
 cd mac-mech-kb
 zsh Scripts/build_app.sh
-open dist/MechanicalKeyboard.app
+open dist/mac-mech-kb.app
 ```
 
 Build the Apple Silicon app and installer:
@@ -96,6 +96,8 @@ zsh Scripts/build_dmg.sh
 ```
 
 Builds use the checked-in WAVs and app icon. They don't download or regenerate audio. The packaging script ad-hoc signs the app for integrity; Developer ID signing and notarization require an Apple Developer certificate and a separate release process.
+
+The DMG shows the app, an Applications shortcut, and a “Drag me to Applications” guide. Its first build installs the pinned [dmgbuild](https://dmgbuild.readthedocs.io/) packaging tool into `.build/dmg-tools`; later builds reuse it. No system Python packages or Finder preferences are changed.
 
 <details>
 <summary><strong>Tests, audio previews, and asset preparation</strong></summary>
@@ -113,6 +115,9 @@ python3 Scripts/verify_sounds.py
 
 # Redraw the native app icon
 swift Scripts/prepare_icon.swift
+
+# Redraw the Retina installer background
+swift Scripts/prepare_dmg_art.swift
 ```
 
 Tests render audio into memory. They don't play through your speakers, request keyboard access, or change login settings. Restricted runners need access to macOS audio components. Generated apps, installers, caches, and previews stay in ignored directories.
@@ -123,13 +128,13 @@ Tests render audio into memory. They don't play through your speakers, request k
 <summary><strong>Around the project</strong></summary>
 
 ```text
-Sources/MechanicalKeyboard/
+Sources/MacMechKB/
 ├── App/          Menu-bar UI and lifecycle
 ├── Audio/        Playback, per-key voicing, and Lube
 ├── Keyboard/     Event listener and key routing
 ├── Settings/     Preferences and permissions
 └── Resources/    Bundle metadata and recorded sounds
-Assets/           App icon
+Assets/           App icon and installer artwork
 docs/             README artwork
 Scripts/          Build, package, prepare, verify
 Tests/            Swift and Python regression checks

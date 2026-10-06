@@ -13,15 +13,15 @@ build_options=(--disable-sandbox --manifest-cache none -debug-info-format none -
     --triple arm64-apple-macosx13.0 --scratch-path .build/release-arm64)
 swift build "${build_options[@]}"
 binary_directory=$(swift build "${build_options[@]}" --show-bin-path)
-app_path="$PWD/dist/MechanicalKeyboard.app"
+app_path="$PWD/dist/mac-mech-kb.app"
 staging_directory=$(mktemp -d "$PWD/dist/.app-build.XXXXXX")
 trap 'rm -rf "$staging_directory"' EXIT
-staged_app="$staging_directory/MechanicalKeyboard.app"
+staged_app="$staging_directory/mac-mech-kb.app"
 mkdir -p "$staged_app/Contents/MacOS" "$staged_app/Contents/Resources"
-cp "$binary_directory/MechanicalKeyboard" "$staged_app/Contents/MacOS/MechanicalKeyboard"
-[[ "$(lipo -archs "$staged_app/Contents/MacOS/MechanicalKeyboard")" == arm64 ]]
-cp -R "$binary_directory/MechanicalKeyboard_MechanicalKeyboard.bundle" "$staged_app/Contents/Resources/"
-cp Sources/MechanicalKeyboard/Resources/Info.plist "$staged_app/Contents/Info.plist"
+cp "$binary_directory/mac-mech-kb" "$staged_app/Contents/MacOS/mac-mech-kb"
+[[ "$(lipo -archs "$staged_app/Contents/MacOS/mac-mech-kb")" == arm64 ]]
+cp -R "$binary_directory/MacMechKB_MacMechKB.bundle" "$staged_app/Contents/Resources/"
+cp Sources/MacMechKB/Resources/Info.plist "$staged_app/Contents/Info.plist"
 cp AudioLicenses.md LICENSE "$staged_app/Contents/Resources/"
 cp Assets/AppIcon.icns "$staged_app/Contents/Resources/"
 plutil -lint "$staged_app/Contents/Info.plist"

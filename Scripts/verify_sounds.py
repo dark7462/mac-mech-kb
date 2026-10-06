@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PRESETS = {"Blue", "Brown", "Red"}
 NAMES = {f"normal-{i:02d}" for i in range(1, 7)} | {"space", "enter", "backspace"}
-SOUNDS = Path("Sources/MechanicalKeyboard/Resources/Sounds")
+SOUNDS = Path("Sources/MacMechKB/Resources/Sounds")
 
 
 def require(condition, message):
