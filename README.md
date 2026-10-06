@@ -16,6 +16,7 @@
 
 <p align="center">
   <a href="#get-it-on-your-mac">Install</a> ·
+  <a href="#allow-input-monitoring">Permissions</a> ·
   <a href="#pick-your-feel">Sounds</a> ·
   <a href="#small-app-personal-sound">Features</a> ·
   <a href="#build-it-yourself">Build</a> ·
@@ -30,14 +31,48 @@
 
 macOS **13 Ventura or later** · **Apple Silicon only (M1 and newer)** · No Swift or Xcode needed to install.
 
-1. Open the downloaded `.dmg`.
-2. Drag **mac-mech-kb.app** into **Applications**, then eject the disk image.
-3. Open the app from Applications. Look for the **keyboard icon in your menu bar**.
-4. Choose **Request access** and allow the app in **System Settings → Privacy & Security → Input Monitoring**. Quit and reopen it if macOS asks.
-5. Pick a switch, set your volume, and type.
+### Install the app
+
+1. Open the [latest release](https://github.com/dark7462/mac-mech-kb/releases/latest) and expand **Assets** if needed.
+2. Download the file ending in **`-arm64.dmg`**. The source-code ZIP is for developers.
+3. Open the downloaded DMG. Follow **“Drag me to Applications”**: drag **mac-mech-kb** onto the **Applications** folder.
+4. Wait for the copy to finish, then eject the **mac-mech-kb** disk image in Finder.
+5. Open **Finder → Applications → mac-mech-kb**. Launch the installed copy from Applications.
+6. Click the **keyboard icon in the menu bar** at the top of your screen. This is a menu-bar app, so it doesn't open a regular app window.
+
+### If macOS blocks the first launch
 
 > [!IMPORTANT]
-> **This release is not Developer ID signed or notarized by Apple.** If macOS blocks it, first try opening the app, then use **System Settings → Privacy & Security → Open Anyway** for this app if you trust this release. See [Apple's first-launch instructions](https://support.apple.com/102445). You do not need to disable Gatekeeper. Release assets include a SHA-256 checksum.
+> **This release is not Developer ID signed or notarized by Apple.** Only proceed if you trust the release you downloaded. Release assets include a SHA-256 checksum.
+
+1. Try opening **mac-mech-kb** from Applications once.
+2. Open **Apple menu → System Settings → Privacy & Security**.
+3. Scroll to the security message about **mac-mech-kb** and click **Open Anyway**.
+4. Authenticate if prompted, then confirm **Open**. Continue with Input Monitoring below.
+
+See [Apple's first-launch instructions](https://support.apple.com/102445). You do not need to disable Gatekeeper.
+
+### Allow Input Monitoring
+
+**Input Monitoring is required for keystroke sounds while you use other apps.** mac-mech-kb uses physical key codes to choose sounds locally; it doesn't save a typing history or send your input anywhere.
+
+1. Click the **keyboard icon in the menu bar** to open mac-mech-kb.
+2. In the **Allow Input Monitoring** card, click **Request access**.
+3. Click **Open Settings** in the app, or navigate to **Apple menu → System Settings → Privacy & Security → Input Monitoring**.
+4. Find **mac-mech-kb** and turn its switch **on**. Use Touch ID or your Mac password if macOS asks you to authorize the change.
+5. If macOS offers **Quit & Reopen**, choose it. Otherwise, choose **Quit** from the app's menu and reopen **mac-mech-kb** from Applications.
+6. Open the keyboard menu again and turn **Keyboard sounds** on. Once the status says **Playing**, choose **Blue**, **Brown**, or **Red**, turn up the app volume, and type in a normal text field to try it.
+
+[Apple's Input Monitoring guide](https://support.apple.com/guide/mac-help/mchl4cedafb6/mac) explains where to manage or revoke this permission.
+
+<details>
+<summary><strong>App missing from the list, or still no sound?</strong></summary>
+
+- **Not listed:** open the copy in Applications, click **Request access**, then revisit Input Monitoring. If the pane offers a **+** button, use it to add **Applications → mac-mech-kb.app**, then enable its switch.
+- **Still says “Input Monitoring needed”:** check that the switch is on for the installed copy. Quit and reopen the app, then click **Refresh status** in its menu. If needed, turn its Input Monitoring switch off and back on, then reopen the app again.
+- **Permission enabled but no sound:** check that **Keyboard sounds** is on, the app volume and your Mac's output volume are above zero, and the correct audio output is selected. Try typing in TextEdit outside a password field; Secure Input can block keyboard events. Try speakers or wired headphones if Bluetooth audio feels delayed.
+
+</details>
 
 <details>
 <summary><strong>Already running an earlier build?</strong></summary>
