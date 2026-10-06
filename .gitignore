@@ -1,0 +1,35 @@
+# SwiftPM, Xcode, and generated application bundles
+/.build/
+/.swiftpm/
+/build/
+/dist/
+/DerivedData/
+xcuserdata/
+*.xcuserstate
+*.xcresult/
+*.dSYM/
+*.app/
+
+# macOS and editor state (keep the portable launch configuration)
+.DS_Store
+.AppleDouble
+.LSOverride
+.idea/
+.vscode/*
+!.vscode/launch.json
+*.swp
+*.swo
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local credentials and settings
+.env
+.env.*
+!.env.example
+
+# Local provenance snapshots; source URLs, licenses, and hashes are committed
+/AudioSources/*-source.html

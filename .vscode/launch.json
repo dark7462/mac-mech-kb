@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:mac-mech-kb}",
+            "name": "Debug MechanicalKeyboard",
+            "target": "MechanicalKeyboard",
+            "configuration": "debug",
+            "preLaunchTask": "swift: Build Debug MechanicalKeyboard"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:mac-mech-kb}",
+            "name": "Release MechanicalKeyboard",
+            "target": "MechanicalKeyboard",
+            "configuration": "release",
+            "preLaunchTask": "swift: Build Release MechanicalKeyboard"
+        }
+    ]
+}

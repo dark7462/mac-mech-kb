@@ -1,0 +1,151 @@
+{
+  "retrieved": "2026-10-06",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "input_format": "Public high-quality MP3 preview supplied by Freesound",
+  "output_format": "48000 Hz, mono, 16-bit PCM WAV",
+  "key_assignment_note": "The source recordings are continuous typing with unlabelled keys. Each output is a distinct excerpt assigned to its app role; Space, Enter and Backspace are not verified recordings of those physical keys.",
+  "presets": {
+    "Blue": {
+      "file": "blue.mp3",
+      "author": "SamsterBirdies",
+      "title": "Typing on a keyboard",
+      "hardware": "Cherry MX Blue",
+      "page": "https://freesound.org/people/SamsterBirdies/sounds/489424/",
+      "download": "https://cdn.freesound.org/previews/489/489424_5487341-hq.mp3",
+      "cuts": {
+        "normal-01": [
+          0.2395,
+          0.2825
+        ],
+        "normal-02": [
+          0.6945,
+          0.7385
+        ],
+        "normal-03": [
+          0.8345,
+          0.8805
+        ],
+        "normal-04": [
+          1.3865,
+          1.4305
+        ],
+        "normal-05": [
+          1.6775,
+          1.7215
+        ],
+        "normal-06": [
+          4.6415,
+          4.6855
+        ],
+        "space": [
+          5.3725,
+          5.4245
+        ],
+        "enter": [
+          6.552,
+          6.6
+        ],
+        "backspace": [
+          6.8855,
+          6.9295
+        ]
+      },
+      "pitch_semitones": 1
+    },
+    "Brown": {
+      "file": "brown.mp3",
+      "author": "Reina0613",
+      "title": "Mechanical keyboard typing sounds",
+      "hardware": "ikki68 Aurora, hand-lubed WS Brown tactile switches",
+      "page": "https://freesound.org/people/Reina0613/sounds/709460/",
+      "download": "https://cdn.freesound.org/previews/709/709460_13652097-hq.mp3",
+      "cuts": {
+        "normal-01": [
+          19.297,
+          19.337
+        ],
+        "normal-02": [
+          20.863,
+          20.903
+        ],
+        "normal-03": [
+          21.957,
+          21.997
+        ],
+        "normal-04": [
+          22.1385,
+          22.1785
+        ],
+        "normal-05": [
+          28.1505,
+          28.1905
+        ],
+        "normal-06": [
+          35.338,
+          35.378
+        ],
+        "space": [
+          33.114,
+          33.16
+        ],
+        "enter": [
+          36.975,
+          37.021
+        ],
+        "backspace": [
+          39.8445,
+          39.8865
+        ]
+      },
+      "pitch_semitones": 0
+    },
+    "Red": {
+      "file": "red.mp3",
+      "author": "SamsterBirdies",
+      "title": "Typing on a keyboard",
+      "hardware": "Gateron Red",
+      "page": "https://freesound.org/people/SamsterBirdies/sounds/489422/",
+      "download": "https://cdn.freesound.org/previews/489/489422_5487341-hq.mp3",
+      "cuts": {
+        "normal-01": [
+          0.5355,
+          0.5795
+        ],
+        "normal-02": [
+          2.6,
+          2.644
+        ],
+        "normal-03": [
+          3.2975,
+          3.3415
+        ],
+        "normal-04": [
+          6.908,
+          6.952
+        ],
+        "normal-05": [
+          9.177,
+          9.221
+        ],
+        "normal-06": [
+          12.7115,
+          12.7555
+        ],
+        "space": [
+          17.8765,
+          17.9285
+        ],
+        "enter": [
+          24.142,
+          24.19
+        ],
+        "backspace": [
+          27.898,
+          27.946
+        ]
+      },
+      "pitch_semitones": 0
+    }
+  }
+}

@@ -1,0 +1,28 @@
+#!/bin/zsh
+set -euo pipefail
+cd "${0:A:h}/.."
+# Recorded WAV assets are checked in. Never regenerate audio during an app build.
+python3 Scripts/verify_sounds.py
+mkdir -p .build/cache dist
+export CLANG_MODULE_CACHE_PATH="$PWD/.build/cache"
+build_options=(--disable-sandbox --manifest-cache none -debug-info-format none -c release)
+swift build "${build_options[@]}"
+binary_directory=$(swift build "${build_options[@]}" --show-bin-path)
+app_path="$PWD/dist/MechanicalKeyboard.app"
+staging_directory=$(mktemp -d "$PWD/dist/.app-build.XXXXXX")
+trap 'rm -rf "$staging_directory"' EXIT
+staged_app="$staging_directory/MechanicalKeyboard.app"
+mkdir -p "$staged_app/Contents/MacOS" "$staged_app/Contents/Resources"
+cp "$binary_directory/MechanicalKeyboard" "$staged_app/Contents/MacOS/MechanicalKeyboard"
+cp -R "$binary_directory/MechanicalKeyboard_MechanicalKeyboard.bundle" "$staged_app/Contents/Resources/"
+cp Sources/MechanicalKeyboard/Resources/Info.plist "$staged_app/Contents/Info.plist"
+cp AudioLicenses.md LICENSE "$staged_app/Contents/Resources/"
+plutil -lint "$staged_app/Contents/Info.plist"
+python3 Scripts/verify_sounds.py --bundle "$staged_app"
+# Replace the generated bundle only after it passes verification. Avoid merging stale files.
+if [[ -e "$app_path" ]]; then mv "$app_path" "$staging_directory/previous.app"; fi
+if ! mv "$staged_app" "$app_path"; then
+    if [[ -e "$staging_directory/previous.app" ]]; then mv "$staging_directory/previous.app" "$app_path"; fi
+    exit 1
+fi
+print -r -- "$app_path"
